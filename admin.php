@@ -1,5 +1,5 @@
 <?php
-session_start();
+/*session_start();
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 } else {
@@ -21,7 +21,7 @@ if ($now > $_SESSION['expire']) {
 if ($_SESSION['tipo_usuario'] != 1) {
     //   header('Location: http://34.207.191.253/sistema_colegio_humanista/index.php');
     //    exit();
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
     <di class="container">
         <div class="row">
             <div class="col">
-                <h1 class="text-center">Administracion de partidos</h1>
+                <h1 class="text-center">Administracion de Equipos Participantes</h1>
             </div>
         </div>
     </di>
@@ -65,7 +65,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label ">Pais del equipo</label>
+                        <label for="exampleFormControlInput1" class="form-label ">Pais Origen del equipo</label>
                         <input required class="form-control" id="exampleFormControlInput1" name="pais" />
                         <div class="invalid-feedback">
                             Ingrese un Pais
@@ -100,10 +100,12 @@ if ($_SESSION['tipo_usuario'] != 1) {
                             <tr>
                                 <th scope="col">Equipo</th>
                                 <th scope="col">Pais</th>
+                                <th scope="col">Opcion</th>
                             </tr>
                         </thead>
                         <tbody id="info">
                             <?php
+                            /*
                             require_once "procesosphp/conexion.php";
                             $query = "SELECT NOMBRE, PAIS FROM EQUIPOS";
                             $consulta = $mysqli->query($query);
@@ -121,7 +123,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
                         </table>";
                             } else {
                                 echo "<h1 text-center>Error en la base de datos</h1>";
-                            }
+                            }*/
                             ?>
                 </div>
             </div>
