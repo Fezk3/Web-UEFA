@@ -105,15 +105,15 @@ if ($_SESSION['tipo_usuario'] != 1) {
                         <tbody id="info">
                             <?php
                             require_once "procesosphp/conexion.php";
-                            $query = "SELECT CEDULA, NOMBRE FROM ADMINISTRADORES WHERE TIPO = 2";
+                            $query = "SELECT NOMBRE, PAIS FROM EQUIPOS";
                             $consulta = $mysqli->query($query);
                             if ($consulta->num_rows >= 1) {
                                 while ($fila = $consulta->fetch_array(MYSQLI_ASSOC)) {
                                     echo "<tr>
-                                <td class='text-center op '>" . $fila['CEDULA'] . "</td>
                                 <td class='text-center op '>" . $fila['NOMBRE'] . "</td>
+                                <td class='text-center op '>" . $fila['PAIS'] . "</td>
                                <td class='text-center op'>
-                                    <a class='btn btn-danger editar' href=procesosphp/eliminauser.php?CEDULA=" . $fila['CEDULA'] . ">Eliminar</a>
+                                    <a class='btn btn-danger editar' href=procesosphp/eliminauser.php?NOMBRE=" . $fila['NOMBRE'] . ">Eliminar</a>
                                 </td>
                               </tr>";
                                 }
@@ -126,7 +126,6 @@ if ($_SESSION['tipo_usuario'] != 1) {
                 </div>
             </div>
         </div>
-
 
     </div>
     </div>
