@@ -9,7 +9,7 @@
             if (isset($_SESSION['loggedin'])) {
                 echo '<a href="procesosphp/logout.php" class="btn btn-danger mt-1">CERRAR SESIÓN</a>';
             } else {
-                echo '<a href="login.php" class="btn btn-success mt-1">INICIAR SESIÓN</a>';
+                echo '<a href="./login.php" class="btn btn-success mt-1">INICIAR SESIÓN</a>';
             }
             ?>
         </div>

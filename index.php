@@ -32,7 +32,7 @@ session_start();
   ?>
   
   <main>
-      <h6><a style="text-decoration: none" href="tablaPosiciones/posiciones.php">TABLA POSICIONES </a></h6>
+      <h6><a style="text-decoration: none" href="tablaPosiciones/index.php">TABLA POSICIONES </a></h6>
 
   </main>
 

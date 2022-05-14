@@ -1,3 +1,15 @@
+<?php
+require_once '../procesosphp/conexion.php';
+
+/*$queryCount = "SELECT count(*) FROM UEFA.PARTIDOS as contador";
+$resultado = $mysqli->query($queryCount);
+while ($row = $resultado->fetch_assoc()) {
+    if ($row['contador'] == 0){
+        header('Location: http://localhost:63342/Web-UEFA/index.php');
+    }
+}*/
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -22,13 +34,17 @@
 
 <header>
     <?php
-    include_once '../navbar.php';
-    ?>
+/*    include_once '../navbar.php';
+    */?>
+    <a href="../login.php" class="btn btn-success mt-1">INICIAR SESIÓN</a>
+    
+
 </header>
 
 <main class="content">
     <div class="container">
         <h2 class="text-center">POSICIONES</h2>
+
         <div class="d-flex carousel-nav">
             <a href="#" class="col active">GRUPO A</a>
             <a href="#" class="col">GRUPO B</a>
@@ -40,46 +56,11 @@
             <a href="#" class="col">GRUPO H</a>
         </div>
 
-
         <div class="owl-carousel owl-1">
             <div class="media-29101 d-md-flex w-100">
                 <div class="text">
                     <?php
-                    include  './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
-                    include  './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
-                    include  './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
-                    include  './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
-                    include  './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
+                    $_GET['GRUPO'] = 'A';
                     include './tabla.php';
                     ?>
                 </div>
@@ -87,14 +68,56 @@
             <div class="media-29101 d-md-flex w-100">
                 <div class="text">
                     <?php
-                    include  './tabla.php';
+                    $_GET['GRUPO'] = 'B';
+                    include './tabla.php';
                     ?>
                 </div>
             </div> <!-- .item -->
             <div class="media-29101 d-md-flex w-100">
                 <div class="text">
                     <?php
-                    include  './tabla.php';
+                    $_GET['GRUPO'] = 'C';
+                    include './tabla.php';
+                    ?>
+                </div>
+            </div> <!-- .item -->
+            <div class="media-29101 d-md-flex w-100">
+                <div class="text">
+                    <?php
+                    $_GET['GRUPO'] = 'D';
+                    include './tabla.php';
+                    ?>
+                </div>
+            </div> <!-- .item -->
+            <div class="media-29101 d-md-flex w-100">
+                <div class="text">
+                    <?php
+                    $_GET['GRUPO'] = 'E';
+                    include './tabla.php';
+                    ?>
+                </div>
+            </div> <!-- .item -->
+            <div class="media-29101 d-md-flex w-100">
+                <div class="text">
+                    <?php
+                    $_GET['GRUPO'] = 'F';
+                    include './tabla.php';
+                    ?>
+                </div>
+            </div> <!-- .item -->
+            <div class="media-29101 d-md-flex w-100">
+                <div class="text">
+                    <?php
+                    $_GET['GRUPO'] = 'G';
+                    include './tabla.php';
+                    ?>
+                </div>
+            </div> <!-- .item -->
+            <div class="media-29101 d-md-flex w-100">
+                <div class="text">
+                    <?php
+                    $_GET['GRUPO'] = 'H';
+                    include './tabla.php';
                     ?>
                 </div>
             </div> <!-- .item -->
