@@ -15,6 +15,7 @@ if (isset($_SESSION['loggedin'])){
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="./LOGIN/assets/css/login.css">
+    <link rel="icon" type="image/x-icon" href="./imgs/favicon.ico">
 </head>
 <body>
 
@@ -33,10 +34,11 @@ if (isset($_SESSION['loggedin'])){
                 </div>
                 <div class="col-md-7">
                     <div class="card-body">
-                        <div class="brand-wrapper">
-                            <img src="./imgs/LOGO.png" alt="logo" class="logo">
-                        </div>
-                        <p class="login-card-description">INICIAR SESIÓN</p>
+                        <img src="./imgs/LOGO.png" alt="logo" class="logo" height="64" width="64">
+<!--                        <div class="brand-wrapper">
+                            <img src="./imgs/LOGO.png" alt="logo" class="logo" height="37" width="37">
+                        </div>-->
+                        <p class="login-card-description mt-3">INICIAR SESIÓN</p>
                         <form action="./procesosphp/checklogin.php" class="needs-validation" method="POST" novalidate>
                             <div class="form-group">
                                 <label for="cedula" class="form-label">CEDULA</label>
