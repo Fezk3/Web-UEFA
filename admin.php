@@ -136,7 +136,6 @@ if ($_SESSION['tipo_usuario'] != 1) {
                     <a href="http://" class="btn btn-lg btn-danger editar"> Hacer Sorteo </a>
                 </div>
             </div>
-
         </div>
 
     </div>
