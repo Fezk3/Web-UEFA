@@ -127,10 +127,13 @@ if ($_SESSION['tipo_usuario'] != 1) {
                             ?>
                 </div>
             </div>
+        </div>
+
+        <div class="container">
             <!-- Arreglar display -->
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col col-md-4 col-lg-4">
-                    <a href="http://" class="btn btn-danger editar"> Hacer Sorteo </a>
+                <div class="col col-md-3 col-lg-4 text-center">
+                    <a href="http://" class="btn btn-lg btn-danger editar"> Hacer Sorteo </a>
                 </div>
             </div>
 
