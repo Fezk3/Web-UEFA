@@ -45,7 +45,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
     <di class="container">
         <div class="row">
             <div class="col">
-                <h1 class="text-center">Administracion de Equipos Participantes</h1>
+                <h1 class="text-center mt-4 mb-3">Administracion de Equipos Participantes</h1>
             </div>
         </div>
     </di>
@@ -77,7 +77,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
     </div>
 
     <div class="row justify-content-center align-items-center">
-        <div class="col-5 col-md-3 text-center">
+        <div class="col-5 col-md-3 col-lg-2 text-center">
             <button class="btn btn-success btn-block btn-lg mt-4" style="width: 100%;">Agregar</button>
         </div>
     </div>
@@ -88,13 +88,13 @@ if ($_SESSION['tipo_usuario'] != 1) {
     <div class="container mt-5">
         <div class="row">
             <div class="col">
-                <h1 class="text-center">Equipos Registrados</h1>
+                <h1 class="text-center mt-4 mb-3">Equipos Registrados</h1>
             </div>
         </div>
 
         <div class="container mt-4">
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-md-10 ">
+                <div class="col-md-10">
                     <table class="table table-success table-hover table-bordered">
                         <thead>
                             <tr>
@@ -127,6 +127,13 @@ if ($_SESSION['tipo_usuario'] != 1) {
                             ?>
                 </div>
             </div>
+            <!-- Arreglar display -->
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col col-md-4 col-lg-4">
+                    <a href="http://" class="btn btn-danger editar"> Hacer Sorteo </a>
+                </div>
+            </div>
+
         </div>
 
     </div>
