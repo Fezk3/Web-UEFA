@@ -113,7 +113,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
                                 <td class='text-center op '>" . $fila['NOMBRE'] . "</td>
                                 <td class='text-center op '>" . $fila['PAIS'] . "</td>
                                <td class='text-center op'>
-                                    <a class='btn btn-danger editar' href=procesosphp/eliminauser.php?NOMBRE=" . $fila['NOMBRE'] . ">Eliminar</a>
+                                    <a class='btn btn-danger editar' href=procesosphp/eliminaequipo.php?NOMBRE=" . $fila['NOMBRE'] . ">Eliminar</a>
                                 </td>
                               </tr>";
                                 }
