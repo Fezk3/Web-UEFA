@@ -8,11 +8,11 @@ $pais = $_GET['PAIS'];
 
 $query_verifica_32 = 'SELECT count(*) FROM equipos';
 $result_verifica_32 = $mysqli->query($query_verifica_32);
-$total =  $result_verifica_32->fetch_assoc()['count(*)'];
+$total =  $result_verifica_32->fetch_assoc()['count(*)']; // total de equipos
 
 $query_verifica_pais = "SELECT count(*) FROM equipos WHERE PAIS = '$pais'";
 $result_verifica_pais = $mysqli->query($query_verifica_pais);
-$total2 =  $result_verifica_pais->fetch_assoc()['count(*)'];
+$total2 =  $result_verifica_pais->fetch_assoc()['count(*)']; // numero de equipos con el pais especificado
 
 if ($total <= 32) {
 
