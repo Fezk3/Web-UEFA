@@ -122,7 +122,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
 
     <div class="row justify-content-center align-items-center">
         <div class="col-5 col-md-2 col-lg-2 text-center">
-            <button class="btn btn-success btn-block btn-lg mt-4" style="width: 100%;">Agregar</button>
+            <button class="btn btn-success btn-block btn-lg mt-4" id="agrega" style="width: 100%;">Agregar</button>
         </div>
     </div>
 
@@ -183,7 +183,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
     <div class="container mt-4 mb-5">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col col-md-3 col-lg-4 text-center">
-                <a href="http://" class="btn btn-lg btn-danger" id="sorteo"> Hacer Sorteo </a>
+                <a href="http://" class="btn btn-lg btn-primary" id="sorteo"> Hacer Sorteo </a>
             </div>
         </div>
     </div>
