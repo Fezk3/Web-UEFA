@@ -43,8 +43,8 @@ if ($_SESSION['tipo_usuario'] != 1) {
     </header>
 
     <di class="container">
-        <div class="row">
-            <div class="col">
+        <div class="row justify-content-center align-items-center">
+            <div class="col col-md-8">
                 <h1 class="text-center mt-4 mb-3">Administracion de Equipos Participantes</h1>
             </div>
         </div>
