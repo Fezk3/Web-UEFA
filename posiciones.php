@@ -1,11 +1,11 @@
 <?php
 session_start();
-require_once '../procesosphp/conexion.php';
+require_once './procesosphp/conexion.php';
 
 /*$queryCount = "SELECt count(*) as contador FROM uefa.equipos;";
 $resultado = $mysqli->query($queryCount);
 while ($row = $resultado->fetch_assoc()) {
-    if ($row['contador'] == 0){
+    if (!$row['contador'] == 32){
         header('Location: http://localhost:63342/Web-UEFA/index.php');
     }
 }*/
@@ -27,32 +27,16 @@ while ($row = $resultado->fetch_assoc()) {
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.php"><img src="./" width="90" alt=""
-                                                          class="d-inline-block align-middle mr-2"/></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <?php
-                if (isset($_SESSION['loggedin'])) {
-                    echo '<a href="../procesosphp/logout.php" class="btn btn-danger mt-1">CERRAR SESIÓN</a>';
-                } else {
-                    echo '<a href="../login.php" class="btn btn-success mt-1">INICIAR SESIÓN</a>';
-                }
-                ?>
-            </div>
-        </div>
-    </nav>
+    <?php
+    include_once './navbar.php';
+    ?>
 </header>
 
 <main>
     <div class="container mt-3 md-mt-5">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-12">
-                <h3 class="text-center text-black">Información campeonatos continentales</h3>
+                <h3 class="text-center text-black">Información UEFA</h3>
                 <br>
                 <br>
                 <ul class="tabs">
@@ -66,53 +50,56 @@ while ($row = $resultado->fetch_assoc()) {
                     <li data-tab-target="#GRUPOH" class="tab">GRUPO H</li>
                 </ul>
 
+                <br><br>
+
+
                 <div class="tab-content">
                     <div id="GRUPOA" data-tab-content class="active">
                         <?php
                         $_GET['GRUPO'] = 'A';
-                        include './tabla.php';
+                        include './procesosphp/tabla_posiciones.php';
                         ?>
                     </div>
                     <div id="GRUPOB" data-tab-content>
                         <?php
                         $_GET['GRUPO'] = 'B';
-                        include './tabla.php';
+                        include './procesosphp/tabla_posiciones.php';
                         ?>
                     </div>
                     <div id="GRUPOC" data-tab-content>
                         <?php
                         $_GET['GRUPO'] = 'C';
-                        include './tabla.php';
+                        include './procesosphp/tabla_posiciones.php';
                         ?>
                     </div>
                     <div id="GRUPOD" data-tab-content>
                         <?php
                         $_GET['GRUPO'] = 'D';
-                        include './tabla.php';
+                        include './procesosphp/tabla_posiciones.php';
                         ?>
                     </div>
                     <div id="GRUPOE" data-tab-content>
                         <?php
                         $_GET['GRUPO'] = 'E';
-                        include './tabla.php';
+                        include './procesosphp/tabla_posiciones.php';
                         ?>
                     </div>
                     <div id="GRUPOF" data-tab-content>
                         <?php
                         $_GET['GRUPO'] = 'F';
-                        include './tabla.php';
+                        include './procesosphp/tabla_posiciones.php';
                         ?>
                     </div>
                     <div id="GRUPOG" data-tab-content>
                         <?php
                         $_GET['GRUPO'] = 'G';
-                        include './tabla.php';
+                        include './procesosphp/tabla_posiciones.php';
                         ?>
                     </div>
                     <div id="GRUPOH" data-tab-content>
                         <?php
                         $_GET['GRUPO'] = 'H';
-                        include './tabla.php';
+                        include './procesosphp/tabla_posiciones.php';
                         ?>
                     </div>
                 </div>

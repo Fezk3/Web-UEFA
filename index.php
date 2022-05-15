@@ -32,10 +32,10 @@ session_start();
       unset($_SESSION['mensajeBienvenida']);
   }
   ?>
-  <main>
-      <h6><a style="text-decoration: none" href="tablaPosiciones/index.php">TABLA POSICIONES </a></h6>
+      <h6>
+          <a style="text-decoration: none" href="./posiciones.php">TABLA POSICIONES </a>
+      </h6>
 
-  </main>
 
 <div class="container mt-3 md-mt-5">
     <div class="row d-flex justify-content-center align-items-center">
