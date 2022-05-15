@@ -13,7 +13,7 @@ if ($mysqli->query($query)) {
     header('Location: http://localhost/Web-UEFA/admin.php');
 } else {
 
-    $_SESSION['mensaje2'] = "Error, no se ha podido agregar el usuario: " . $nombre;
+    $_SESSION['mensaje2'] = "Error, no se ha podido agregar el equipo: " . $nombre;
 
     header('Location: http://localhost/Web-UEFA/admin.php');
 }

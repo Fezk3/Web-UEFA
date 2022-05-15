@@ -42,6 +42,50 @@ if ($_SESSION['tipo_usuario'] != 1) {
         <?php include_once("navbar.php"); ?>
     </header>
 
+    <?php
+    if (isset($_SESSION['mensaje1'])) {
+    ?>
+        <div class="alert alert-success alert-dismissible fade show mt-1" role="alert">
+            <strong><?php echo $_SESSION['mensaje1'] ?></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+    <?php
+        unset($_SESSION['mensaje1']);
+    }
+    if (isset($_SESSION['mensaje2'])) {
+    ?>
+        <div class="alert alert-danger alert-dismissible fade show mt-1" role="alert">
+            <strong><?php echo $_SESSION['mensaje2'] ?></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+    <?php
+        unset($_SESSION['mensaje2']);
+    }
+    if (isset($_SESSION['mensaje3'])) {
+    ?>
+        <div class="alert alert-success alert-dismissible fade show mt-1" role="alert">
+            <strong><?php echo $_SESSION['mensaje3'] ?></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+    <?php
+        unset($_SESSION['mensaje3']);
+    }
+    if (isset($_SESSION['mensaje4'])) {
+    ?>
+        <div class="alert alert-danger alert-dismissible fade show mt-1" role="alert">
+            <strong><?php echo $_SESSION['mensaje4'] ?></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+    <?php
+        unset($_SESSION['mensaje4']);
+    }
+    ?>
+
+
     <di class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col col-md-8">
