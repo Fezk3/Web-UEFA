@@ -8,13 +8,15 @@ $pais = $_GET['PAIS'];
 
 $query_verifica_32 = 'SELECT count(*) FROM equipos';
 $result_verifica_32 = $mysqli->query($query_verifica_32);
+$total =  $result_verifica_32->fetch_assoc()['count(*)'];
 
 $query_verifica_pais = "SELECT count(*) FROM equipos WHERE PAIS = '$pais'";
 $result_verifica_pais = $mysqli->query($query_verifica_pais);
+$total2 =  $result_verifica_pais->fetch_assoc()['count(*)'];
 
-if ($result_verifica_32 <= 32) {
+if ($total <= 32) {
 
-    if ($result_verifica_pais == 4) {
+    if ($total2 == 4) {
 
         $_SESSION['mensaje5'] = "Error, no se pueden agregar mas de 4 equipos de un mismo pais";
         header('Location: http://localhost/Web-UEFA/admin.php');
