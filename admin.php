@@ -139,7 +139,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
                 $total =  $result_verifica_32->fetch_assoc()['count(*)'];
                 ?>
 
-                <h1 class="text-center mt-4 mb-3">Equipos Registrados <?php echo $total ?></h1>
+                <h1 class="text-center mt-4 mb-3">Equipos Registrados <strong id="contador"><?php echo $total ?></strong></h1>
             </div>
         </div>
 
@@ -183,7 +183,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
     <div class="container mt-4 mb-5">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col col-md-3 col-lg-4 text-center">
-                <a href="http://" class="btn btn-lg btn-danger editar"> Hacer Sorteo </a>
+                <a href="http://" class="btn btn-lg btn-danger" id="sorteo"> Hacer Sorteo </a>
             </div>
         </div>
     </div>
@@ -214,6 +214,8 @@ if ($_SESSION['tipo_usuario'] != 1) {
                 })
         })()
     </script>
+
+    <script src="./js/app.js"></script>
 
 </body>
 

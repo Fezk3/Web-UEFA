@@ -18,20 +18,24 @@ if ($result_verifica_32 <= 32) {
 
         $_SESSION['mensaje5'] = "Error, no se pueden agregar mas de 4 equipos de un mismo pais";
         header('Location: http://localhost/Web-UEFA/admin.php');
+        exit();
     }
 
     $query = "INSERT INTO equipos (NOMBRE, PAIS) VALUES ('$nombre', '$pais')";
     if ($mysqli->query($query)) {
         $_SESSION['mensaje3'] = "Se ha agregado el equipo: " . $nombre . ".";
         header('Location: http://localhost/Web-UEFA/admin.php');
+        exit();
     } else {
         $_SESSION['mensaje4'] = "Error, no se ha podido agregar el equipo: " . $nombre;
         header('Location: http://localhost/Web-UEFA/admin.php');
+        exit();
     }
 } else {
 
     $_SESSION['mensaje5'] = "Error, no se pueden agregar mas quipos, ya estan los 32";
     header('Location: http://localhost/Web-UEFA/admin.php');
+    exit();
 }
 
 
