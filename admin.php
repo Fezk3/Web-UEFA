@@ -99,7 +99,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
 
             <form action="./procesosphp/agregaequipo.php" class="needs-validation" method="GET" novalidate>
 
-                <div class="col-12 col-md-6 m-auto">
+                <div class="col-12 col-md-8 col-lg-6 m-auto">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label ">Nombre del Equipo</label>
                         <input required class="form-control" name="NOMBRE" id="exampleFormControlInput1" />
