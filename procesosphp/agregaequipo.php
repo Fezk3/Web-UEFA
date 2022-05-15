@@ -10,10 +10,10 @@ if ($mysqli->query($query)) {
 
     $_SESSION['mensaje1'] = "Se ha agregardo el equipo: " . $nombre;
 
-    header('Location: http://34.207.191.253/sistema_colegio_humanista/menu_admin.php');
+    header('Location: http:Web-UEFA/menu_admin.php');
 } else {
 
     $_SESSION['mensaje2'] = "Error, no se ha podido agregar el usuario: " . $nombre;
 
-    header('Location: http://34.207.191.253/sistema_colegio_humanista/menu_admin.php');
+    header('Location: http:Web-UEFA/menu_admin.php');
 }
