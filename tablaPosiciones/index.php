@@ -1,7 +1,8 @@
 <?php
+session_start();
 require_once '../procesosphp/conexion.php';
 
-/*$queryCount = "SELECT count(*) FROM UEFA.PARTIDOS as contador";
+/*$queryCount = "SELECt count(*) as contador FROM uefa.equipos;";
 $resultado = $mysqli->query($queryCount);
 while ($row = $resultado->fetch_assoc()) {
     if ($row['contador'] == 0){
@@ -12,125 +13,112 @@ while ($row = $resultado->fetch_assoc()) {
 
 <!doctype html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>POSICIONES UEFA</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Style -->
-    <link rel="stylesheet" href="css/style.css">
-    <title>TABLA DE POSICIONES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script src="../js/script.js" defer></script>
 </head>
-
 <body>
 
 <header>
-    <?php
-/*    include_once '../navbar.php';
-    */?>
-    <a href="../login.php" class="btn btn-success mt-1">INICIAR SESIÓN</a>
-    
-
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.php"><img src="./" width="90" alt=""
+                                                          class="d-inline-block align-middle mr-2"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <?php
+                if (isset($_SESSION['loggedin'])) {
+                    echo '<a href="../procesosphp/logout.php" class="btn btn-danger mt-1">CERRAR SESIÓN</a>';
+                } else {
+                    echo '<a href="../login.php" class="btn btn-success mt-1">INICIAR SESIÓN</a>';
+                }
+                ?>
+            </div>
+        </div>
+    </nav>
 </header>
 
-<main class="content">
-    <div class="container">
-        <h2 class="text-center">POSICIONES</h2>
+<main>
+    <div class="container mt-3 md-mt-5">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-12">
+                <h3 class="text-center text-black">Información campeonatos continentales</h3>
+                <br>
+                <br>
+                <ul class="tabs">
+                    <li data-tab-target="#GRUPOA" class="active tab">GRUPO A</li>
+                    <li data-tab-target="#GRUPOB" class="tab">GRUPO B</li>
+                    <li data-tab-target="#GRUPOC" class="tab">GRUPO C</li>
+                    <li data-tab-target="#GRUPOD" class="tab">GRUPO D</li>
+                    <li data-tab-target="#GRUPOE" class="tab">GRUPO E</li>
+                    <li data-tab-target="#GRUPOF" class="tab">GRUPO F</li>
+                    <li data-tab-target="#GRUPOG" class="tab">GRUPO G</li>
+                    <li data-tab-target="#GRUPOH" class="tab">GRUPO H</li>
+                </ul>
 
-        <div class="d-flex carousel-nav">
-            <a href="#" class="col active">GRUPO A</a>
-            <a href="#" class="col">GRUPO B</a>
-            <a href="#" class="col">GRUPO C</a>
-            <a href="#" class="col">GRUPO D</a>
-            <a href="#" class="col">GRUPO E</a>
-            <a href="#" class="col">GRUPO F</a>
-            <a href="#" class="col">GRUPO G</a>
-            <a href="#" class="col">GRUPO H</a>
+                <div class="tab-content">
+                    <div id="GRUPOA" data-tab-content class="active">
+                        <?php
+                        $_GET['GRUPO'] = 'A';
+                        include './tabla.php';
+                        ?>
+                    </div>
+                    <div id="GRUPOB" data-tab-content>
+                        <?php
+                        $_GET['GRUPO'] = 'B';
+                        include './tabla.php';
+                        ?>
+                    </div>
+                    <div id="GRUPOC" data-tab-content>
+                        <?php
+                        $_GET['GRUPO'] = 'C';
+                        include './tabla.php';
+                        ?>
+                    </div>
+                    <div id="GRUPOD" data-tab-content>
+                        <?php
+                        $_GET['GRUPO'] = 'D';
+                        include './tabla.php';
+                        ?>
+                    </div>
+                    <div id="GRUPOE" data-tab-content>
+                        <?php
+                        $_GET['GRUPO'] = 'E';
+                        include './tabla.php';
+                        ?>
+                    </div>
+                    <div id="GRUPOF" data-tab-content>
+                        <?php
+                        $_GET['GRUPO'] = 'F';
+                        include './tabla.php';
+                        ?>
+                    </div>
+                    <div id="GRUPOG" data-tab-content>
+                        <?php
+                        $_GET['GRUPO'] = 'G';
+                        include './tabla.php';
+                        ?>
+                    </div>
+                    <div id="GRUPOH" data-tab-content>
+                        <?php
+                        $_GET['GRUPO'] = 'H';
+                        include './tabla.php';
+                        ?>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="owl-carousel owl-1">
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
-                    $_GET['GRUPO'] = 'A';
-                    include './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
-                    $_GET['GRUPO'] = 'B';
-                    include './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
-                    $_GET['GRUPO'] = 'C';
-                    include './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
-                    $_GET['GRUPO'] = 'D';
-                    include './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
-                    $_GET['GRUPO'] = 'E';
-                    include './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
-                    $_GET['GRUPO'] = 'F';
-                    include './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
-                    $_GET['GRUPO'] = 'G';
-                    include './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-            <div class="media-29101 d-md-flex w-100">
-                <div class="text">
-                    <?php
-                    $_GET['GRUPO'] = 'H';
-                    include './tabla.php';
-                    ?>
-                </div>
-            </div> <!-- .item -->
-        </div>
-    </div><!--CONTAINER-->
-</main><!--CONTENT-->
-
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/main.js"></script>
-
+    </div>
+</main>
 </body>
-
 </html>
