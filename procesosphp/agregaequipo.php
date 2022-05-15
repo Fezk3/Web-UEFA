@@ -9,7 +9,7 @@ $pais = $_GET['PAIS'];
 $query_verifica_32 = 'SELECT count(*) FROM equipos';
 $result_verifica_32 = $mysqli->query($query_verifica_32);
 
-$query_verifica_pais = 'SELECT count(*) FROM equipos WHERE PAIS = "' . $pais . '"';
+$query_verifica_pais = "SELECT count(*) FROM equipos WHERE PAIS = '$pais'";
 $result_verifica_pais = $mysqli->query($query_verifica_pais);
 
 if ($result_verifica_32 <= 32) {
