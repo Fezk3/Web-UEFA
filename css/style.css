@@ -1,0 +1,73 @@
+
+  
+  body {
+    display: grid;
+    background-image: url('fondo.jpg');
+    
+  }
+
+  .controls {
+    width: 80%;
+    background: #EAE3E1;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #ABA8A8;
+    font-family: 'calibri';
+    font-size: 18px;
+    color:  #000;
+  }
+
+.msj{
+    width: 80%;
+    background: #EAE3E1;
+    padding: 40px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #ABA8A8;
+    font-family: 'calibri';
+    font-size: 18px;
+    color:  #000;
+  }
+ .botons{
+    width: 20%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+  [data-tab-content] {
+    display: none;
+  }
+  
+  .active[data-tab-content] {
+    display: block;
+  }
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid black;
+  }
+  
+  .tab {
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .tab.active {
+    background-color: #CCC;
+  }
+  
+  .tab:hover {
+    background-color: #AAA;
+  }
+  
+  .tab-content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
