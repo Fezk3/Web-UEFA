@@ -11,8 +11,8 @@ session_start();
 <title>UEFA</title>
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-<link rel="stylesheet" href="style.css" />
-<script src="script.js" defer></script>
+<link rel="stylesheet" href="css/style.css" />
+<script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -89,7 +89,7 @@ session_start();
     <div class="row d-flex justify-content-center align-items-center">
     <div class="col-md-8">
         <h3 class="text-center text-black"> ¿Qué es la UEFA?</h3> 
-        <center><span class="uefa"><img class="uefa" src="gif.gif" width="200" height="200" salt="uefa"></span></center> 
+        <center><span class="uefa"><img class="uefa" src="imgs/gif.gif" width="200" height="200" salt="uefa"></span></center> 
             <h5>
             La UEFA, la Unión de Federaciones Europeas de Fútbol, es el órgano rector del fútbol europeo. Es una asociación de federaciones, una democracia representativa, y una organización global de 55 federaciones nacionales a lo largo de toda Europa.
             Sus objetivos son, entre otros, hacer frente a todas las cuestiones relativas al fútbol europeo; promover el fútbol en un espíritu de unidad, solidaridad, paz, comprensión y juego limpio sin ningún tipo de discriminación política, de raza, religión, género o cualquier otra.
