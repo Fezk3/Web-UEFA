@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +20,23 @@
     <?php include_once("navbar.php"); ?>
 </header> 
 
+
+  <?php
+  if (isset($_SESSION['mensajeBienvenida'])) {
+      ?>
+      <div class="alert alert-primary alert-dismissible fade show mt-1" role="alert">
+          <strong><?php echo $_SESSION['mensajeBienvenida'] ?></strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <?php
+      unset($_SESSION['mensajeBienvenida']);
+  }
+  ?>
+  <main>
+      <h6><a style="text-decoration: none" href="tablaPosiciones/index.php">TABLA POSICIONES </a></h6>
+
+  </main>
+
 <div class="container mt-3 md-mt-5">
     <div class="row d-flex justify-content-center align-items-center">
     <div class="col-md-8">
@@ -31,6 +51,7 @@
     <li data-tab-target="#uefa" class="tab">UEFA</li>
     <li data-tab-target="#ofc" class="tab">OFC</li>
   </ul>
+
 
   <div class="tab-content">
     <div id="caf" data-tab-content class="active">
