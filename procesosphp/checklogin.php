@@ -11,7 +11,7 @@ require_once './conexion.php';
 $userID = $_POST['cedula'];
 $password = md5($_POST['password']);
 
-$sql = "SELECT * FROM administradores WHERE CEDULA = '$userID'";
+$sql = "SELECT * FROM admins WHERE CEDULA = '$userID'";
 
 $result = $mysqli->query($sql);
 

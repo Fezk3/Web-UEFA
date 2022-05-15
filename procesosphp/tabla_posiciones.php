@@ -10,7 +10,7 @@ $grupo = $_GET['GRUPO'];
 <div class="container mt-4">
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col-md-12 ">
-            <table class="table table-success table-hover table-bordered">
+            <table class="table table-primary table-hover table-bordered">
                 <thead>
                 <tr>
                     <th scope="col">CLUB</th>
