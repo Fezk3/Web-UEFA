@@ -1,19 +1,19 @@
 <?php
 
-session_start();
+//session_start();
 
 require_once "conexion.php";
-$nombre = $_POST['NOMBRE'];
-$pais = $_POST['PAIS'];
-$query = "INSERT INTO EQUIPOS(NOMBRE, PAIS) VALUES ('$nombre', '$pais')";
+$nombre = $_GET['NOMBRE'];
+$pais = $_GET['PAIS'];
+$query = "INSERT INTO equipos(NOMBRE, PAIS) VALUES ('$nombre', '$pais')";
 if ($mysqli->query($query)) {
 
     $_SESSION['mensaje1'] = "Se ha agregardo el equipo: " . $nombre;
 
-    header('Location: http:Web-UEFA/menu_admin.php');
+    header('Location: http://localhost/Web-UEFA/admin.php');
 } else {
 
     $_SESSION['mensaje2'] = "Error, no se ha podido agregar el usuario: " . $nombre;
 
-    header('Location: http:Web-UEFA/menu_admin.php');
+    header('Location: http://localhost/Web-UEFA/admin.php');
 }

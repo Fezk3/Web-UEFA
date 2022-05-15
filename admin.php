@@ -53,12 +53,12 @@ if ($_SESSION['tipo_usuario'] != 1) {
     <div class="container">
         <div class="row">
 
-            <form action="./procesosphp/agregaequipo.php" class="needs-validation" method="POST" novalidate>
+            <form action="./procesosphp/agregaequipo.php" class="needs-validation" method="GET" novalidate>
 
                 <div class="col-12 col-md-6 m-auto">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label ">Nombre del Equipo</label>
-                        <input required class="form-control" name="equipo" id="exampleFormControlInput1" />
+                        <input required class="form-control" name="NOMBRE" id="exampleFormControlInput1" />
                         <div class="invalid-feedback">
                             Ingrese un Nombre de equipo
                         </div>
@@ -66,7 +66,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label ">Pais Origen del equipo</label>
-                        <input required class="form-control" id="exampleFormControlInput1" name="pais" />
+                        <input required class="form-control" id="exampleFormControlInput1" name="PAIS" />
                         <div class="invalid-feedback">
                             Ingrese un Pais
                         </div>
@@ -105,9 +105,8 @@ if ($_SESSION['tipo_usuario'] != 1) {
                         </thead>
                         <tbody id="info">
                             <?php
-                            /*
                             require_once "procesosphp/conexion.php";
-                            $query = "SELECT NOMBRE, PAIS FROM EQUIPOS";
+                            $query = "SELECT NOMBRE, PAIS FROM equipos";
                             $consulta = $mysqli->query($query);
                             if ($consulta->num_rows >= 1) {
                                 while ($fila = $consulta->fetch_array(MYSQLI_ASSOC)) {
@@ -123,16 +122,14 @@ if ($_SESSION['tipo_usuario'] != 1) {
                         </table>";
                             } else {
                                 echo "<h1 text-center>Error en la base de datos</h1>";
-                            }*/
+                            }
                             ?>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
 
     </div>
-    <div class="container mt-4">
+    <div class="container mt-4 mb-5">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col col-md-3 col-lg-4 text-center">
                 <a href="http://" class="btn btn-lg btn-danger editar"> Hacer Sorteo </a>

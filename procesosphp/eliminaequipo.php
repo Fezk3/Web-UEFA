@@ -1,22 +1,21 @@
 <?php
 
-session_start();
+//session_start();
 
 require_once "conexion.php";
 
 if (isset($_GET['NOMBRE'])) {
     $nombre = $_GET['NOMBRE'];
-    echo $cedula;
-    $query = "DELETE FROM EQUIPOS WHERE NOMBRE = '$nombre'";
+    $query = "DELETE FROM equipos WHERE NOMBRE = '$nombre'";
     if ($mysqli->query($query)) {
 
-        $_SESSION['mensaje5'] = "Se ha eliminado el equipo" . $nombre . ".";
+        $_SESSION['mensaje3'] = "Se ha eliminado el equipo" . $nombre . ".";
 
-        header('Location: http://34.207.191.253/sistema_colegio_humanista/menu_admin.php');
+        header('Location: http://localhost/Web-UEFA/admin.php');
     } else {
 
-        $_SESSION['mensaje6'] = "Error, no se ha podido eliminar el admin.";
+        $_SESSION['mensaje4'] = "Error, no se ha podido eliminar el admin.";
 
-        header('Location: http://34.207.191.253/sistema_colegio_humanista/menu_admin.php');
+        header('Location: http://localhost/Web-UEFA/admin.php');
     }
 }
