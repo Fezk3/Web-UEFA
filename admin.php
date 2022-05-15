@@ -33,7 +33,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administracion UEFA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="styleadmin.css">
+    <link rel="stylesheet" href="css/styleadmin.css">
 </head>
 
 <body>
@@ -55,7 +55,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
 
             <form action="./procesosphp/agregaequipo.php" class="needs-validation" method="POST" novalidate>
 
-                <div class="col-12 col-md-8 m-auto">
+                <div class="col-12 col-md-6 m-auto">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label ">Nombre del Equipo</label>
                         <input required class="form-control" name="equipo" id="exampleFormControlInput1" />
@@ -94,12 +94,12 @@ if ($_SESSION['tipo_usuario'] != 1) {
 
         <div class="container mt-4">
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-md-10">
-                    <table class="table table-success table-hover table-bordered">
+                <div class="col-12 col-md-10">
+                    <table class="table table-primary table-hover table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col">Equipo</th>
-                                <th scope="col">Pais</th>
+                                <th scope="col">País Origen</th>
                                 <th scope="col">Opcion</th>
                             </tr>
                         </thead>
@@ -125,19 +125,19 @@ if ($_SESSION['tipo_usuario'] != 1) {
                                 echo "<h1 text-center>Error en la base de datos</h1>";
                             }*/
                             ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
 
-        <div class="container">
-            <!-- Arreglar display -->
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col col-md-3 col-lg-4 text-center">
-                    <a href="http://" class="btn btn-lg btn-danger editar"> Hacer Sorteo </a>
-                </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col col-md-3 col-lg-4 text-center">
+                <a href="http://" class="btn btn-lg btn-danger editar"> Hacer Sorteo </a>
             </div>
         </div>
-
     </div>
     </div>
     </div>
