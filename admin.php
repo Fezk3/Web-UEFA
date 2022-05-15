@@ -77,7 +77,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
     </div>
 
     <div class="row justify-content-center align-items-center">
-        <div class="col-5 col-md-3 col-lg-2 text-center">
+        <div class="col-5 col-md-2 col-lg-2 text-center">
             <button class="btn btn-success btn-block btn-lg mt-4" style="width: 100%;">Agregar</button>
         </div>
     </div>
@@ -94,7 +94,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
 
         <div class="container mt-4">
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-12 col-md-10">
+                <div class="col-12 col-md-11">
                     <table class="table table-primary table-hover table-bordered">
                         <thead>
                             <tr>
