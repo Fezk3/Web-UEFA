@@ -29,6 +29,7 @@ if ($result_verifica_32 <= 32) {
         header('Location: http://localhost/Web-UEFA/admin.php');
     }
 } else {
+
     $_SESSION['mensaje5'] = "Error, no se pueden agregar mas quipos, ya estan los 32";
     header('Location: http://localhost/Web-UEFA/admin.php');
 }

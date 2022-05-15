@@ -132,7 +132,14 @@ if ($_SESSION['tipo_usuario'] != 1) {
     <div class="container mt-5">
         <div class="row">
             <div class="col">
-                <h1 class="text-center mt-4 mb-3">Equipos Registrados</h1>
+                <?php
+                include_once("procesosphp/conexion.php");
+                $query_verifica_32 = 'SELECT count(*) FROM equipos';
+                $result_verifica_32 = $mysqli->query($query_verifica_32);
+                $total =  $result_verifica_32->fetch_assoc()['count(*)'];
+                ?>
+
+                <h1 class="text-center mt-4 mb-3">Equipos Registrados <?php echo $total ?></h1>
             </div>
         </div>
 
