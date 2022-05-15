@@ -14,7 +14,7 @@ $query_verifica_pais = "SELECT count(*) FROM equipos WHERE PAIS = '$pais'";
 $result_verifica_pais = $mysqli->query($query_verifica_pais);
 $total2 =  $result_verifica_pais->fetch_assoc()['count(*)']; // numero de equipos con el pais especificado
 
-if ($total <= 32) {
+if ($total < 32) {
 
     if ($total2 == 4) {
 
