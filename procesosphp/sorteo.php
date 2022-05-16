@@ -27,11 +27,11 @@ while ($row = $resultado->fetch_array()) {
     $equipos[] = $row['NOMBRE'];
 }
 
-while ($equipos){
+while ($equipos) {
     $random = rand(1, 8);
 
     if ($random == 1) {
-        if ($cantidadA < 4){
+        if ($cantidadA < 4) {
             $grupoA[] = array_pop($equipos);
             $cantidadA++;
             /*continue;*/
@@ -41,7 +41,7 @@ while ($equipos){
     }
 
     if ($random == 2) {
-        if ($cantidadB < 4){
+        if ($cantidadB < 4) {
             $grupoB[] = array_pop($equipos);
             $cantidadB++;
             /*continue;*/
@@ -51,7 +51,7 @@ while ($equipos){
     }
 
     if ($random == 3) {
-        if ($cantidadC < 4){
+        if ($cantidadC < 4) {
             $grupoC[] = array_pop($equipos);
             $cantidadC++;
             /*continue;*/
@@ -61,7 +61,7 @@ while ($equipos){
     }
 
     if ($random == 4) {
-        if ($cantidadD < 4){
+        if ($cantidadD < 4) {
             $grupoD[] = array_pop($equipos);
             $cantidadD++;
             /*continue;*/
@@ -71,7 +71,7 @@ while ($equipos){
     }
 
     if ($random == 5) {
-        if ($cantidadE < 4){
+        if ($cantidadE < 4) {
             $grupoE[] = array_pop($equipos);
             $cantidadE++;
             /*continue;*/
@@ -81,7 +81,7 @@ while ($equipos){
     }
 
     if ($random == 6) {
-        if ($cantidadF < 4){
+        if ($cantidadF < 4) {
             $grupoF[] = array_pop($equipos);
             $cantidadF++;
             /*continue;*/
@@ -91,7 +91,7 @@ while ($equipos){
     }
 
     if ($random == 7) {
-        if ($cantidadG < 4){
+        if ($cantidadG < 4) {
             $grupoG[] = array_pop($equipos);
             $cantidadG++;
             /*continue;*/
@@ -101,7 +101,7 @@ while ($equipos){
     }
 
     if ($random == 8) {
-        if ($cantidadH < 4){
+        if ($cantidadH < 4) {
             $grupoH[] = array_pop($equipos);
             $cantidadH++;
         }
@@ -109,38 +109,344 @@ while ($equipos){
 }
 
 
-foreach ($grupoA as $a){
+foreach ($grupoA as $a) {
     $update = "UPDATE uefa.equipos SET GRUPO = 'A' WHERE NOMBRE = '{$a}'";
     $mysqli->query($update);
 }
-foreach ($grupoB as $a){
+foreach ($grupoB as $a) {
     $update = "UPDATE uefa.equipos SET GRUPO = 'B' WHERE NOMBRE = '{$a}'";
     $mysqli->query($update);
 }
-foreach ($grupoC as $a){
+foreach ($grupoC as $a) {
     $update = "UPDATE uefa.equipos SET GRUPO = 'C' WHERE NOMBRE = '{$a}'";
     $mysqli->query($update);
 }
-foreach ($grupoD as $a){
+foreach ($grupoD as $a) {
     $update = "UPDATE uefa.equipos SET GRUPO = 'D' WHERE NOMBRE = '{$a}'";
     $mysqli->query($update);
 }
-foreach ($grupoE as $a){
+foreach ($grupoE as $a) {
     $update = "UPDATE uefa.equipos SET GRUPO = 'E' WHERE NOMBRE = '{$a}'";
     $mysqli->query($update);
 }
-foreach ($grupoF as $a){
+foreach ($grupoF as $a) {
     $update = "UPDATE uefa.equipos SET GRUPO = 'F' WHERE NOMBRE = '{$a}'";
     $mysqli->query($update);
 }
-foreach ($grupoG as $a){
+foreach ($grupoG as $a) {
     $update = "UPDATE uefa.equipos SET GRUPO = 'G' WHERE NOMBRE = '{$a}'";
     $mysqli->query($update);
 }
-foreach ($grupoH as $a){
+foreach ($grupoH as $a) {
     $update = "UPDATE uefa.equipos SET GRUPO = 'H' WHERE NOMBRE = '{$a}'";
     $mysqli->query($update);
 }
 
+
+// creacion de partidos en tablas partido
+
+// Grupo A partidos
+$local = $grupoA[0];
+
+$query = "INSERT INTO partidos_a (LOCAL, VISITANTE) VALUES ('$local', '$grupoA[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_a (LOCAL, VISITANTE) VALUES ('$local', '$grupoA[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_a (LOCAL, VISITANTE) VALUES ('$local', '$grupoA[3]')";
+$mysqli->query($query);
+
+$local = $grupoA[1];
+
+$query = "INSERT INTO partidos_a (LOCAL, VISITANTE) VALUES ('$local', '$grupoA[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_a (LOCAL, VISITANTE) VALUES ('$local', '$grupoA[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_a (LOCAL, VISITANTE) VALUES ('$local', '$grupoA[3]')";
+$mysqli->query($query);
+
+$local = $grupoA[2];
+
+$query = "INSERT INTO partidos_a (LOCAL, VISITANTE) VALUES ('$local', '$grupoA[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_a (LOCAL, VISITANTE) VALUES ('$local', '$grupoA[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_a (LOCAL, VISITANTE) VALUES ('$local', '$grupoA[3]')";
+$mysqli->query($query);
+
+$local = $grupoA[3];
+
+$query = "INSERT INTO partidos_a (LOCAL, VISITANTE) VALUES ('$local', '$grupoA[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_a (LOCAL, VISITANTE) VALUES ('$local', '$grupoA[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_a (LOCAL, VISITANTE) VALUES ('$local', '$grupoA[2]')";
+$mysqli->query($query);
+
+// Grupo B partidos
+
+$local = $grupoB[0];
+
+$query = "INSERT INTO partidos_b (LOCAL, VISITANTE) VALUES ('$local', '$grupoB[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_b (LOCAL, VISITANTE) VALUES ('$local', '$grupoB[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_b (LOCAL, VISITANTE) VALUES ('$local', '$grupoB[3]')";
+$mysqli->query($query);
+
+$local = $grupoB[1];
+
+$query = "INSERT INTO partidos_b (LOCAL, VISITANTE) VALUES ('$local', '$grupoB[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_b (LOCAL, VISITANTE) VALUES ('$local', '$grupoB[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_b (LOCAL, VISITANTE) VALUES ('$local', '$grupoB[3]')";
+$mysqli->query($query);
+
+$local = $grupoB[2];
+
+$query = "INSERT INTO partidos_b (LOCAL, VISITANTE) VALUES ('$local', '$grupoB[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_b (LOCAL, VISITANTE) VALUES ('$local', '$grupoB[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_b (LOCAL, VISITANTE) VALUES ('$local', '$grupoB[3]')";
+$mysqli->query($query);
+
+$local = $grupoB[3];
+
+$query = "INSERT INTO partidos_b (LOCAL, VISITANTE) VALUES ('$local', '$grupoB[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_b (LOCAL, VISITANTE) VALUES ('$local', '$grupoB[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_b (LOCAL, VISITANTE) VALUES ('$local', '$grupoB[2]')";
+$mysqli->query($query);
+
+// Grupo C partidos
+
+$local = $grupoC[0];
+
+$query = "INSERT INTO partidos_c (LOCAL, VISITANTE) VALUES ('$local', '$grupoC[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_c (LOCAL, VISITANTE) VALUES ('$local', '$grupoC[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_c (LOCAL, VISITANTE) VALUES ('$local', '$grupoC[3]')";
+$mysqli->query($query);
+
+$local = $grupoC[1];
+
+$query = "INSERT INTO partidos_c (LOCAL, VISITANTE) VALUES ('$local', '$grupoC[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_c (LOCAL, VISITANTE) VALUES ('$local', '$grupoC[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_c (LOCAL, VISITANTE) VALUES ('$local', '$grupoC[3]')";
+$mysqli->query($query);
+
+$local = $grupoC[2];
+
+$query = "INSERT INTO partidos_c (LOCAL, VISITANTE) VALUES ('$local', '$grupoC[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_c (LOCAL, VISITANTE) VALUES ('$local', '$grupoC[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_c (LOCAL, VISITANTE) VALUES ('$local', '$grupoC[3]')";
+$mysqli->query($query);
+
+$local = $grupoC[3];
+
+$query = "INSERT INTO partidos_c (LOCAL, VISITANTE) VALUES ('$local', '$grupoC[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_c (LOCAL, VISITANTE) VALUES ('$local', '$grupoC[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_c (LOCAL, VISITANTE) VALUES ('$local', '$grupoC[2]')";
+$mysqli->query($query);
+
+// Grupo D partidos
+
+$local = $grupoD[0];
+
+$query = "INSERT INTO partidos_d (LOCAL, VISITANTE) VALUES ('$local', '$grupoD[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_d (LOCAL, VISITANTE) VALUES ('$local', '$grupoD[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_d (LOCAL, VISITANTE) VALUES ('$local', '$grupoD[3]')";
+$mysqli->query($query);
+
+$local = $grupoD[1];
+
+$query = "INSERT INTO partidos_d (LOCAL, VISITANTE) VALUES ('$local', '$grupoD[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_d (LOCAL, VISITANTE) VALUES ('$local', '$grupoD[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_d (LOCAL, VISITANTE) VALUES ('$local', '$grupoD[3]')";
+$mysqli->query($query);
+
+$local = $grupoD[2];
+
+$query = "INSERT INTO partidos_d (LOCAL, VISITANTE) VALUES ('$local', '$grupoD[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_d (LOCAL, VISITANTE) VALUES ('$local', '$grupoD[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_d (LOCAL, VISITANTE) VALUES ('$local', '$grupoD[3]')";
+$mysqli->query($query);
+
+$local = $grupoD[3];
+
+$query = "INSERT INTO partidos_d (LOCAL, VISITANTE) VALUES ('$local', '$grupoD[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_d (LOCAL, VISITANTE) VALUES ('$local', '$grupoD[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_d (LOCAL, VISITANTE) VALUES ('$local', '$grupoD[2]')";
+$mysqli->query($query);
+
+// Grupo E partidos
+
+$local = $grupoE[0];
+
+$query = "INSERT INTO partidos_e (LOCAL, VISITANTE) VALUES ('$local', '$grupoE[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_e (LOCAL, VISITANTE) VALUES ('$local', '$grupoE[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_e (LOCAL, VISITANTE) VALUES ('$local', '$grupoE[3]')";
+$mysqli->query($query);
+
+$local = $grupoE[1];
+
+$query = "INSERT INTO partidos_e (LOCAL, VISITANTE) VALUES ('$local', '$grupoE[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_e (LOCAL, VISITANTE) VALUES ('$local', '$grupoE[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_e (LOCAL, VISITANTE) VALUES ('$local', '$grupoE[3]')";
+$mysqli->query($query);
+
+$local = $grupoE[2];
+
+$query = "INSERT INTO partidos_e (LOCAL, VISITANTE) VALUES ('$local', '$grupoE[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_e (LOCAL, VISITANTE) VALUES ('$local', '$grupoE[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_e (LOCAL, VISITANTE) VALUES ('$local', '$grupoE[3]')";
+$mysqli->query($query);
+
+$local = $grupoE[3];
+
+$query = "INSERT INTO partidos_e (LOCAL, VISITANTE) VALUES ('$local', '$grupoE[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_e (LOCAL, VISITANTE) VALUES ('$local', '$grupoE[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_e (LOCAL, VISITANTE) VALUES ('$local', '$grupoE[2]')";
+$mysqli->query($query);
+
+// Grupo F partidos
+
+$local = $grupoF[0];
+
+$query = "INSERT INTO partidos_f (LOCAL, VISITANTE) VALUES ('$local', '$grupoF[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_f (LOCAL, VISITANTE) VALUES ('$local', '$grupoF[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_f (LOCAL, VISITANTE) VALUES ('$local', '$grupoF[3]')";
+$mysqli->query($query);
+
+$local = $grupoF[1];
+
+$query = "INSERT INTO partidos_f (LOCAL, VISITANTE) VALUES ('$local', '$grupoF[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_f (LOCAL, VISITANTE) VALUES ('$local', '$grupoF[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_f (LOCAL, VISITANTE) VALUES ('$local', '$grupoF[3]')";
+$mysqli->query($query);
+
+$local = $grupoF[2];
+
+$query = "INSERT INTO partidos_f (LOCAL, VISITANTE) VALUES ('$local', '$grupoF[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_f (LOCAL, VISITANTE) VALUES ('$local', '$grupoF[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_f (LOCAL, VISITANTE) VALUES ('$local', '$grupoF[3]')";
+$mysqli->query($query);
+
+$local = $grupoF[3];
+
+$query = "INSERT INTO partidos_f (LOCAL, VISITANTE) VALUES ('$local', '$grupoF[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_f (LOCAL, VISITANTE) VALUES ('$local', '$grupoF[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_f (LOCAL, VISITANTE) VALUES ('$local', '$grupoF[2]')";
+$mysqli->query($query);
+
+// Grupo G partidos
+
+$local = $grupoG[0];
+
+$query = "INSERT INTO partidos_g (LOCAL, VISITANTE) VALUES ('$local', '$grupoG[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_g (LOCAL, VISITANTE) VALUES ('$local', '$grupoG[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_g (LOCAL, VISITANTE) VALUES ('$local', '$grupoG[3]')";
+$mysqli->query($query);
+
+$local = $grupoG[1];
+
+$query = "INSERT INTO partidos_g (LOCAL, VISITANTE) VALUES ('$local', '$grupoG[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_g (LOCAL, VISITANTE) VALUES ('$local', '$grupoG[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_g (LOCAL, VISITANTE) VALUES ('$local', '$grupoG[3]')";
+$mysqli->query($query);
+
+$local = $grupoG[2];
+
+$query = "INSERT INTO partidos_g (LOCAL, VISITANTE) VALUES ('$local', '$grupoG[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_g (LOCAL, VISITANTE) VALUES ('$local', '$grupoG[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_g (LOCAL, VISITANTE) VALUES ('$local', '$grupoG[3]')";
+$mysqli->query($query);
+
+$local = $grupoG[3];
+
+$query = "INSERT INTO partidos_g (LOCAL, VISITANTE) VALUES ('$local', '$grupoG[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_g (LOCAL, VISITANTE) VALUES ('$local', '$grupoG[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_g (LOCAL, VISITANTE) VALUES ('$local', '$grupoG[2]')";
+$mysqli->query($query);
+
+// Grupo H partidos
+
+$local = $grupoH[0];
+
+$query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[3]')";
+$mysqli->query($query);
+
+$local = $grupoH[1];
+
+$query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[2]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[3]')";
+$mysqli->query($query);
+
+$local = $grupoH[2];
+
+$query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[3]')";
+$mysqli->query($query);
+
+$local = $grupoH[3];
+
+$query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[0]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[1]')";
+$mysqli->query($query);
+$query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[2]')";
+$mysqli->query($query);
+
+
 header('Location: http://localhost:63342/Web-UEFA/');
-?>
