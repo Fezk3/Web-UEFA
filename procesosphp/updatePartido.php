@@ -31,7 +31,7 @@ $localGF = 0;
 $localGC = 0;
 $localGD = 0;
 $localPTS = 0;
-while ($fila = $query->fetch_array()){
+while ($fila = $query->fetch_array()) {
     $localPJ = $fila['PJ'];
     $localPG = $fila['PG'];
     $localPP = $fila['PP'];
@@ -52,7 +52,7 @@ $visitanteGF = 0;
 $visitanteGC = 0;
 $visitanteGD = 0;
 $visitantePTS = 0;
-while ($fila = $query->fetch_array()){
+while ($fila = $query->fetch_array()) {
     $visitantePJ = $fila['PJ'];
     $visitantePG = $fila['PG'];
     $visitantePP = $fila['PP'];
@@ -66,16 +66,16 @@ while ($fila = $query->fetch_array()){
 
 /*----------UPDATES-------------*/
 
-    $localPJ = $localPJ + 1;
-    $localGF = $localGF + $Glocal;
-    $localGC = $localGC + $Gvisitante;
+$localPJ = $localPJ + 1;
+$localGF = $localGF + $Glocal;
+$localGC = $localGC + $Gvisitante;
 
 
-    $visitantePJ = $visitantePJ + 1;
-    $visitanteGF = $visitanteGF + $Gvisitante;
-    $visitanteGC = $visitanteGC + $Glocal;
+$visitantePJ = $visitantePJ + 1;
+$visitanteGF = $visitanteGF + $Gvisitante;
+$visitanteGC = $visitanteGC + $Glocal;
 
-if ($Glocal > $Gvisitante){//GANA LOCAL Y PIERDE VISITANTE
+if ($Glocal > $Gvisitante) { //GANA LOCAL Y PIERDE VISITANTE
     $localPG = $localPG + 1;
     $localGD = $localGD + ($Glocal - $Gvisitante);
     $localPTS = $localPTS + 3;
@@ -88,8 +88,7 @@ if ($Glocal > $Gvisitante){//GANA LOCAL Y PIERDE VISITANTE
 
     $updatePartidosV = "UPDATE uefa.equipos SET PJ = {$visitantePJ}, PP = {$visitantePP}, GF = {$visitanteGF}, GC = {$visitanteGC}, GD = {$visitanteGD}, PTS = {$visitantePTS}  WHERE NOMBRE = '{$visitante}'";
     $mysqli->query($updatePartidosV);
-
-}elseif ($Glocal < $Gvisitante){//PIERDE LOCAL Y GANA VISITANTE
+} elseif ($Glocal < $Gvisitante) { //PIERDE LOCAL Y GANA VISITANTE
     $localPP = $localPP + 1;
     $localGD = $localGD - ($Glocal - $Gvisitante);
 
@@ -102,8 +101,7 @@ if ($Glocal > $Gvisitante){//GANA LOCAL Y PIERDE VISITANTE
 
     $updatePartidosV = "UPDATE uefa.equipos SET PJ = {$visitantePJ}, PG = {$visitantePG}, GF = {$visitanteGF}, GC = {$visitanteGC}, GD = {$visitanteGD}, PTS = {$visitantePTS}  WHERE NOMBRE = '{$visitante}'";
     $mysqli->query($updatePartidosV);
-
-}else{//EMPATARON
+} else { //EMPATARON
     $localPE = $localPE + 1;
     $localPTS = $localPTS + 1;
 
@@ -117,5 +115,5 @@ if ($Glocal > $Gvisitante){//GANA LOCAL Y PIERDE VISITANTE
     $mysqli->query($updatePartidosV);
 }
 
-header('Location: http://localhost:63342/Web-UEFA/partidos.php');
+header('Location: http://localhost:/Web-UEFA/partidos.php');
 exit();
