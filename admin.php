@@ -183,7 +183,7 @@ if ($_SESSION['tipo_usuario'] != 1) {
     <div class="container mt-4 mb-5">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col col-md-3 col-lg-4 text-center">
-                <a href="http://" class="btn btn-lg btn-primary" id="sorteo"> Hacer Sorteo </a>
+                <a href="./procesosphp/sorteo.php" class="btn btn-lg btn-primary" id="sorteo"> Hacer Sorteo </a>
             </div>
         </div>
     </div>
@@ -208,7 +208,6 @@ if ($_SESSION['tipo_usuario'] != 1) {
                             event.preventDefault()
                             event.stopPropagation()
                         }
-
                         form.classList.add('was-validated')
                     }, false)
                 })
