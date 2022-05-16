@@ -4,6 +4,8 @@ if (!isset($_GET['GRUPO'])) {
     exit();
 }
 $grupo = $_GET['GRUPO'];
+$grupo = 'uefa.partidos_' . strtolower($grupo);
+
 ?>
 
 
@@ -17,20 +19,24 @@ $grupo = $_GET['GRUPO'];
                         <th scope="col">GL</th>
                         <th scope="col">VISITANTE</th>
                         <th scope="col">GV</th>
+                        <th scope="col">OPCION</th>
 
                     </tr>
                 </thead>
                 <tbody id="info">
                     <?php
-                    $query = "SELECT NOMBRE FROM uefa.partidos_'{$grupo}' WHERE GRUPO = '{$grupo}' ORDER BY PTS DESC;";
+                    $query = "SELECT LOCAL, VISITANTE,ID_PARTIDO   FROM $grupo";
                     $resultado = $mysqli->query($query);
                     while ($row = $resultado->fetch_assoc()) {
                         echo "
                     <tr>
-                    <td>{$row['NOMBRE']}</td>
+                    <td>{$row['LOCAL']}</td>
                     <td><input required class='form-control' name='GL' id='exampleFormControlInput1' /></td>
-                    <td>{$row['NOMBRE']}</td>
-                    <td></td>
+                    <td>{$row['VISITANTE']}</td>
+                    <td><input required class='form-control' name='GV' id='exampleFormControlInput1' /></td>
+                    <td class='text-center op'>
+                    <a class='btn btn-primary editar' href=procesosphp/eliminaequipo.php?IDPARTIDO=" . $row['ID_PARTIDO'] . ">Actualizar</a>
+                </td>
                     </tr>                     
                         ";
                     }

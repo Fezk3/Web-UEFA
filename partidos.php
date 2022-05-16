@@ -34,7 +34,7 @@ while ($row = $resultado->fetch_assoc()) {
     </header>
 
     <main>
-        <div class="container mt-3 md-mt-5">
+        <div class="container mt-5 mb-5 md-mt-5">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-12">
                     <h3 class="text-center text-black">Agregar marcadores</h3>
