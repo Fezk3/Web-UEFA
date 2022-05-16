@@ -100,15 +100,20 @@ session_start();
     </div>
 <br>
 <br>
-    <div class="container mt-3 md-mt-5">
+<div class="container mt-3 md-mt-5">
     <div class="row d-flex justify-content-center align-items-center">
     <div class="col-md-8">
         <h3 class="text-center text-black">Contacto</h3> 
-        <center><input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
-    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
-    <input class="msj" type="text" name="msj" id="msj" placeholder="Mensaje">
-    <input class="botons" type="submit" value="Enviar"></center>
-    
+<center>
+  <form action="https://formsubmit.co/hillauwu2@gmail.com" method="POST">
+    <input class="controls" type="text" name="name"  placeholder="Ingrese su Nombre" required>
+    <input class="controls" type="email" name="email" placeholder="Ingrese su Correo" required>
+    <input class="msj" type="text" name="msj" id="msj" placeholder="Mensaje" required>
+    <button class="botons" type="submit">Enviar</button>
+    <input type="hidden" name="_next" value="index.php">
+</center>
+</form>
+
         </div>
     </div>
     </div>
