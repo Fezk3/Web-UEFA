@@ -9,6 +9,13 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="./posiciones.php">Tabla con Posiciones</a>
                 </li>
+                <?php
+                if (isset($_SESSION['loggedin']) && $_SESSION['sorteo'] == 0) {
+                    echo '<a href="./admin.php" class="btn btn-primary mt-1">Menu Admin</a>';
+                } else if (isset($_SESSION['loggedin']) && $_SESSION['sorteo'] == 1) {
+                    echo '<a href="./partidos.php" class="btn btn-primary mt-1">Menu Admin</a>';
+                }
+                ?>
             </ul>
             <span>
                 <?php
