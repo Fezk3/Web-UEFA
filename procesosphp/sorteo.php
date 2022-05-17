@@ -1,5 +1,8 @@
 <?php
+session_start();
 require_once './conexion.php';
+
+$_SESSION['sorteo'] = true;
 
 $query = "SELECT NOMBRE FROM uefa.equipos;";
 $equipos = array();
@@ -449,4 +452,4 @@ $query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[2
 $mysqli->query($query);
 
 
-header('Location: http://localhost:/Web-UEFA/partidos.php');
+header('Location: http://localhost:63342/Web-UEFA/partidos.php');

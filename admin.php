@@ -1,8 +1,7 @@
 <?php
-/*session_start();
+session_start();
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-} else {
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
     echo "Esta página es solo para usuarios registrados. <br> <br>";
     echo "<a href='./index.php'>LOGIN</a>";
     exit();
@@ -17,11 +16,6 @@ if ($now > $_SESSION['expire']) {
     echo "<a href='./index.php'>NECESITA HACER LOGIN</a>";
     exit();
 }
-
-if ($_SESSION['tipo_usuario'] != 1) {
-    //   header('Location: http://34.207.191.253/sistema_colegio_humanista/index.php');
-    //    exit();
-}*/
 ?>
 
 <!DOCTYPE html>
@@ -82,6 +76,17 @@ if ($_SESSION['tipo_usuario'] != 1) {
 
     <?php
         unset($_SESSION['mensaje4']);
+    }
+
+    if (isset($_SESSION['mensaje5'])) {
+        ?>
+        <div class="alert alert-danger alert-dismissible fade show mt-1" role="alert">
+            <strong><?php echo $_SESSION['mensaje5'] ?></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <?php
+        unset($_SESSION['mensaje5']);
     }
     ?>
 
@@ -192,7 +197,11 @@ if ($_SESSION['tipo_usuario'] != 1) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <?php require_once('./procesosphp/validaform.php') ?>
+    <?php require_once('./procesosphp/validaform.php')
+    ?>
+
+    <script src="./js/app.js"></script>
+
 
 </body>
 

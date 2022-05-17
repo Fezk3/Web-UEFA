@@ -31,6 +31,16 @@ session_start();
   <?php
     unset($_SESSION['mensajeBienvenida']);
   }
+
+  if (isset($_SESSION['mensajeSorteo'])) {
+      ?>
+      <div class="alert alert-danger alert-dismissible fade show mt-1" role="alert">
+          <strong><?php echo $_SESSION['mensajeSorteo'] ?></strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <?php
+      unset($_SESSION['mensajeSorteo']);
+  }
   ?>
 
   <div class="container mt-3 md-mt-5">
