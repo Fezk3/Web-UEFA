@@ -449,4 +449,4 @@ $query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[2
 $mysqli->query($query);
 
 
-header('Location: http://localhost:/Web-UEFA/partidos.php');
+header('Location: http://localhost:63342/Web-UEFA/partidos.php');
