@@ -2,7 +2,14 @@
 session_start();
 require_once './conexion.php';
 
-$_SESSION['sorteo'] = true;
+$queryCount = "SELECt count(*) as contador FROM uefa.partidos_a;";
+$resultado = $mysqli->query($queryCount);
+while ($row = $resultado->fetch_assoc()) {
+    if ($row['contador'] != 0){
+        header('Location: http://localhost:63342/Web-UEFA/index.php');
+        exit();
+    }
+}
 
 $query = "SELECT NOMBRE FROM uefa.equipos;";
 $equipos = array();
