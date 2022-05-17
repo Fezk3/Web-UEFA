@@ -115,5 +115,5 @@ if ($Glocal > $Gvisitante) { //GANA LOCAL Y PIERDE VISITANTE
     $mysqli->query($updatePartidosV);
 }
 
-header('Location: http://localhost:/Web-UEFA/partidos.php');
+header('Location: http://localhost:63342/Web-UEFA/partidos.php');
 exit();

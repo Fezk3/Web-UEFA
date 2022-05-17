@@ -1,6 +1,6 @@
 <?php
 
-//session_start();
+session_start();
 
 require_once "conexion.php";
 $nombre = $_GET['NOMBRE'];
@@ -36,7 +36,6 @@ if ($total < 32) {
         exit();
     }
 } else {
-
     $_SESSION['mensaje5'] = "Error, no se pueden agregar mas quipos, ya estan los 32";
     header('Location: http://localhost:63342/Web-UEFA/admin.php');
     exit();

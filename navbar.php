@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="./imgs/uefalogo.png" width="60" alt="" class="d-inline-block align-middle mr-2" /></a>
+        <a class="navbar-brand" href="index.php"><img src="./imgs/uefa.png" width="80" alt="" class="d-inline-block align-middle mr-2" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,9 +10,10 @@
                     <a class="nav-link active" aria-current="page" href="./posiciones.php">Tabla con Posiciones</a>
                 </li>
                 <?php
-                if (isset($_SESSION['loggedin']) && $_SESSION['sorteo'] == 0) {
+                if (isset($_SESSION['loggedin']) && (!isset($_SESSION['sorteo']) || $_SESSION['sorteo'] == false)) {
                     echo '<a href="./admin.php" class="btn btn-primary mt-1">Menu Admin</a>';
-                } else if (isset($_SESSION['loggedin']) && $_SESSION['sorteo'] == 1) {
+
+                } else if (isset($_SESSION['loggedin']) && isset($_SESSION['sorteo']) && $_SESSION['sorteo'] == true) {
                     echo '<a href="./partidos.php" class="btn btn-primary mt-1">Menu Admin</a>';
                 }
                 ?>

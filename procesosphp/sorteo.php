@@ -1,5 +1,8 @@
 <?php
+session_start();
 require_once './conexion.php';
+
+$_SESSION['sorteo'] = true;
 
 $query = "SELECT NOMBRE FROM uefa.equipos;";
 $equipos = array();
