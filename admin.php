@@ -16,6 +16,18 @@ if ($now > $_SESSION['expire']) {
     echo "<a href='./index.php'>NECESITA HACER LOGIN</a>";
     exit();
 }
+
+require_once './procesosphp/conexion.php';
+
+$queryCount = "SELECt count(*) as contador FROM uefa.partidos_a;";
+$resultado = $mysqli->query($queryCount);
+while ($row = $resultado->fetch_assoc()) {
+    if ($row['contador'] != 0){
+        $_SESSION['mensajeSorteo'] = "Ya se realizó el sorteo.";
+        header('Location: http://localhost:63342/Web-UEFA/partidos.php');
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -87,6 +99,17 @@ if ($now > $_SESSION['expire']) {
 
         <?php
         unset($_SESSION['mensaje5']);
+    }
+
+    if (isset($_SESSION['mensajeExiste'])) {
+        ?>
+        <div class="alert alert-danger alert-dismissible fade show mt-1" role="alert">
+            <strong><?php echo $_SESSION['mensajeExiste'] ?></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <?php
+        unset($_SESSION['mensajeExiste']);
     }
     ?>
 
