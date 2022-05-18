@@ -5,6 +5,8 @@ session_start();
 require_once "conexion.php";
 $nombre = $_GET['NOMBRE'];
 $nombre = strtoupper($nombre);
+
+
 $pais = $_GET['PAIS'];
 $pais = strtoupper($pais);
 
@@ -18,8 +20,17 @@ $total2 =  $result_verifica_pais->fetch_assoc()['count(*)']; // numero de equipo
 
 if ($total < 32) {
 
-    if ($total2 == 4) {
+    $query_existe = "SELECT count(*) FROM equipos WHERE NOMBRE = '{$nombre}';";
+    $res_existe = $mysqli->query($query_existe);
+    $total_existe =  $res_existe->fetch_assoc()['count(*)']; // total de equipos
 
+    if ($total_existe > 0){
+        $_SESSION['mensajeExiste'] = "¡Error! El equipo que desea agregar ya existe.";
+        header('Location: http://localhost:63342/Web-UEFA/admin.php');
+        exit();
+    }
+
+    if ($total2 == 4) {
         $_SESSION['mensaje5'] = "Error, no se pueden agregar mas de 4 equipos de un mismo pais";
         header('Location: http://localhost:63342/Web-UEFA/admin.php');
         exit();
