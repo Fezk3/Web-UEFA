@@ -9,23 +9,23 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="./posiciones.php">Tabla con Posiciones</a>
                 </li>
-                <?php
+                <li class="nav-item">
+                    <?php
+                    require_once './procesosphp/conexion.php';
 
-                require_once './procesosphp/conexion.php';
+                    $queryCount = "SELECt count(*) as contador FROM uefa.partidos_a;";
+                    $resultado = $mysqli->query($queryCount);
+                    while ($row = $resultado->fetch_assoc()) {
+                        $contador = $row['contador'];
+                    }
 
-                $queryCount = "SELECt count(*) as contador FROM uefa.partidos_a;";
-                $resultado = $mysqli->query($queryCount);
-                while ($row = $resultado->fetch_assoc()) {
-                    $contador = $row['contador'];
-                }
-
-                if (isset($_SESSION['loggedin']) && $contador == 0) {
-                    echo '<a href="./admin.php" class="btn btn-primary mt-1">Menu Admin</a>';
-
-                } else if (isset($_SESSION['loggedin']) && $contador != 0) {
-                    echo '<a href="./partidos.php" class="btn btn-primary mt-1">Menu Admin</a>';
-                }
-                ?>
+                    if (isset($_SESSION['loggedin']) && $contador == 0) {
+                        echo '<a href="./admin.php" class="btn btn-primary mt-1">Menu Admin</a>';
+                    } else if (isset($_SESSION['loggedin']) && $contador != 0) {
+                        echo '<a href="./partidos.php" class="btn btn-primary mt-1">Menu Admin</a>';
+                    }
+                    ?>
+                </li>
             </ul>
             <span>
                 <?php

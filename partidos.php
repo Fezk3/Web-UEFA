@@ -5,7 +5,7 @@ require_once './procesosphp/conexion.php';
 $queryCount = "SELECt count(*) as contador FROM uefa.partidos_a;";
 $resultado = $mysqli->query($queryCount);
 while ($row = $resultado->fetch_assoc()) {
-    if ($row['contador'] == 0){
+    if ($row['contador'] == 0) {
         $_SESSION['mensajeSorteo'] = "Aún no se ha realizado el sorteo.";
         header('Location: http://localhost:63342/Web-UEFA/index.php');
         exit();
@@ -39,7 +39,7 @@ while ($row = $resultado->fetch_assoc()) {
         <div class="container mt-5 mb-5 md-mt-5">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-12">
-                    <h3 class="text-center text-black">Agregar marcadores</h3>
+                    <h3 class="text-center text-black">Modificacion de marcadores</h3>
                     <br>
                     <br>
                     <ul class="tabs">

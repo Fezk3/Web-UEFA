@@ -5,7 +5,7 @@ require_once './procesosphp/conexion.php';
 $queryCount = "SELECt count(*) as contador FROM uefa.partidos_a;";
 $resultado = $mysqli->query($queryCount);
 while ($row = $resultado->fetch_assoc()) {
-    if ($row['contador'] == 0){
+    if ($row['contador'] == 0) {
         $_SESSION['mensajeSorteo'] = "Aún no se ha realizado el sorteo.";
         header('Location: http://localhost:63342/Web-UEFA/index.php');
         exit();
@@ -24,7 +24,6 @@ while ($row = $resultado->fetch_assoc()) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/script.js" defer></script>
 </head>
 
 <body>
@@ -36,7 +35,7 @@ while ($row = $resultado->fetch_assoc()) {
     </header>
 
     <main>
-        <div class="container mt-3 md-mt-5">
+        <div class="container mt-5 md-mt-5">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-12">
                     <h3 class="text-center text-black">Información UEFA</h3>
@@ -111,7 +110,7 @@ while ($row = $resultado->fetch_assoc()) {
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <script src="./js/script.js" defer></script>
 </body>
 
 </html>
