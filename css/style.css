@@ -1,6 +1,4 @@
-
-  
-  body {
+ body {
     display: grid;
     background-image: url('fondo.jpg');
     
@@ -71,3 +69,19 @@
     margin-left: 20px;
     margin-right: 20px;
   }
+
+  th {
+    text-align: center;
+    /*font-size: 13px;*/
+    text-decoration: underline;
+}
+
+td{
+    vertical-align: middle;
+}
+
+input{
+
+    width: 10px;
+
+}
