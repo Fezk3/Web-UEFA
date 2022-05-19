@@ -1,6 +1,6 @@
 <?php
 if (!isset($_GET['GRUPO'])) {
-    header('Location: http://localhost:/Web-UEFA/tablaPosiciones/index.php');
+    header('Location: http://54.242.69.39/Web-UEFA/tablaPosiciones/index.php');
     exit();
 }
 $grupo = $_GET['GRUPO'];

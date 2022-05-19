@@ -1,6 +1,6 @@
 <?php
 
-/*session_start();*/
+session_start();
 
 
 $id  = $_GET['ID'];
@@ -136,5 +136,5 @@ $mysqli->query($updateGD);
 mysqli_close($mysqli);
 
 
-header('Location: http://localhost:63342/Web-UEFA/partidos.php');
+header('Location: http://54.242.69.39/Web-UEFA/partidos.php');
 exit();

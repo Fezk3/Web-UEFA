@@ -5,8 +5,8 @@ require_once './conexion.php';
 $queryCount = "SELECt count(*) as contador FROM uefa.partidos_a;";
 $resultado = $mysqli->query($queryCount);
 while ($row = $resultado->fetch_assoc()) {
-    if ($row['contador'] != 0){
-        header('Location: http://localhost:63342/Web-UEFA/index.php');
+    if ($row['contador'] != 0) {
+        header('Location: http://54.242.69.39/Web-UEFA/index.php');
         exit();
     }
 }
@@ -459,4 +459,4 @@ $query = "INSERT INTO partidos_h (LOCAL, VISITANTE) VALUES ('$local', '$grupoH[2
 $mysqli->query($query);
 
 
-header('Location: http://localhost:63342/Web-UEFA/partidos.php');
+header('Location: http://54.242.69.39/Web-UEFA/partidos.php');

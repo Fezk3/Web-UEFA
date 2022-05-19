@@ -2,7 +2,7 @@
 session_start();
 
 if (empty($_POST)) {
-    header('Location: http://localhost:/Web-UEFA/index.php');
+    header('Location: http://54.242.69.39/Web-UEFA/index.php');
     exit();
 }
 
@@ -31,7 +31,7 @@ if ($password == $row['PASSWORD']) {
 
     $_SESSION['mensajeBienvenida'] = "Bienvenido de nuevo " . $userID;;
 
-    header('Location: http://localhost:/Web-UEFA/index.php');
+    header('Location: http://54.242.69.39/Web-UEFA/index.php');
     exit();
 } else {
     echo "Username o Password incorrectos. <br>";

@@ -24,31 +24,31 @@ if ($total < 32) {
     $res_existe = $mysqli->query($query_existe);
     $total_existe =  $res_existe->fetch_assoc()['count(*)']; // total de equipos
 
-    if ($total_existe > 0){
+    if ($total_existe > 0) {
         $_SESSION['mensajeExiste'] = "¡Error! El equipo que desea agregar ya existe.";
-        header('Location: http://localhost:63342/Web-UEFA/admin.php');
+        header('Location: http://54.242.69.39/Web-UEFA/admin.php');
         exit();
     }
 
     if ($total2 == 4) {
         $_SESSION['mensaje5'] = "Error, no se pueden agregar mas de 4 equipos de un mismo pais";
-        header('Location: http://localhost:63342/Web-UEFA/admin.php');
+        header('Location: http://54.242.69.39/Web-UEFA/admin.php');
         exit();
     }
 
     $query = "INSERT INTO equipos (NOMBRE, PAIS) VALUES ('$nombre', '$pais')";
     if ($mysqli->query($query)) {
         $_SESSION['mensaje3'] = "Se ha agregado el equipo: " . $nombre . ".";
-        header('Location: http://localhost:63342/Web-UEFA/admin.php');
+        header('Location: http://54.242.69.39/Web-UEFA/admin.php');
         exit();
     } else {
         $_SESSION['mensaje4'] = "Error, no se ha podido agregar el equipo: " . $nombre;
-        header('Location: http://localhost:63342/Web-UEFA/admin.php');
+        header('Location: http://54.242.69.39/Web-UEFA/admin.php');
         exit();
     }
 } else {
     $_SESSION['mensaje5'] = "Error, no se pueden agregar mas quipos, ya estan los 32";
-    header('Location: http://localhost:63342/Web-UEFA/admin.php');
+    header('Location: http://54.242.69.39/Web-UEFA/admin.php');
     exit();
 }
 

@@ -7,7 +7,7 @@ $resultado = $mysqli->query($queryCount);
 while ($row = $resultado->fetch_assoc()) {
     if ($row['contador'] == 0) {
         $_SESSION['mensajeSorteo'] = "Aún no se ha realizado el sorteo.";
-        header('Location: http://localhost:63342/Web-UEFA/index.php');
+        header('Location: http://54.242.69.39/Web-UEFA/index.php');
         exit();
     }
 }

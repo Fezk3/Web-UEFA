@@ -1,6 +1,6 @@
 <?php
-if (!isset($_GET['GRUPO'])){
-    header('Location: http://localhost:63342/Web-UEFA/tablaPosiciones/index.php');
+if (!isset($_GET['GRUPO'])) {
+    header('Location: http://54.242.69.39/Web-UEFA/tablaPosiciones/index.php');
     exit();
 }
 $grupo = $_GET['GRUPO'];
@@ -12,17 +12,17 @@ $grupo = $_GET['GRUPO'];
         <div class="col-md-12 ">
             <table class="table table-primary table-hover table-bordered">
                 <thead>
-                <tr>
-                    <th scope="col">CLUB</th>
-                    <th scope="col">PJ</th>
-                    <th scope="col">PG</th>
-                    <th scope="col">PE</th>
-                    <th scope="col">PP</th>
-                    <th scope="col">GF</th>
-                    <th scope="col">GC</th>
-                    <th scope="col">DG</th>
-                    <th scope="col">PTS</th>
-                </tr>
+                    <tr>
+                        <th scope="col">CLUB</th>
+                        <th scope="col">PJ</th>
+                        <th scope="col">PG</th>
+                        <th scope="col">PE</th>
+                        <th scope="col">PP</th>
+                        <th scope="col">GF</th>
+                        <th scope="col">GC</th>
+                        <th scope="col">DG</th>
+                        <th scope="col">PTS</th>
+                    </tr>
                 </thead>
                 <tbody id="info">
                     <?php
